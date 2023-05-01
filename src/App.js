@@ -3,22 +3,22 @@ import { supabase } from './supabaseClient';
 import logo from './logo.svg';
 import './App.css';
 
-function Pictures() {
-  const [myPictures, setMyPictures] = useState([]);
-  async function getPictures() {
-    let { data: pictures, error} = await supabase
-    .from('pictures')
+function Gallery() {
+  const [myImages, setMyImages] = useState([]);
+  async function getImages() {
+    let { data: images, error} = await supabase
+    .from('images')
     .select('*')
-  setMyPictures(pictures);
+  setMyImages(images);
   }
-getPictures();
+getImages();
 return (
     <table>
       {
-        myPictures.map(b => (
+        myImages.map(b => (
           <tr>
             <td>{b.title}</td>
-            <td>{b.pictures}</td>
+            <td>{b.image}</td>
           </tr>
         ))
       }
@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Pictures/>
+        <Gallery/>
         <MagicButton/>
       </header>
     </div>
