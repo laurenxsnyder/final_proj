@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { supabase } from './supabaseClient';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 function Gallery() {
@@ -23,7 +23,7 @@ return (
         ))
       }
     </table>
-  );
+  )
 }
 
 
@@ -51,9 +51,11 @@ function App() {
       <header className="App-header">
         <Gallery/>
         <MagicButton/>
+        <script type="module" src="index.js"></script>
       </header>
     </div>
   );
 }
 
 export default App;
+
